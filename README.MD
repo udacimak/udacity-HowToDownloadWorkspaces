@@ -45,6 +45,9 @@ The snippet below compresses all files in a workspace and put them in
 `workspace_archive.tar` file.
 
 ```python
+""" Source:
+      - https://stackoverflow.com/questions/48122744/how-to-download-all-files-and-folder-hierarchy-from-jupyter-notebook
+"""
 import os
 import tarfile
 
