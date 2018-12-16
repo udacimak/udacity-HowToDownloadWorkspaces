@@ -62,8 +62,8 @@ def recursive_files(dir_name='.', ignore=None):
 
             yield os.path.join(dir_name, file_name)
 
-def make_tar_file(dir_name='.', tar_file_name='workspace_archive.tar', ignore=None):
-    tar = tarfile.open(tar_file_name, 'w')
+def make_tar_file(dir_name='.', target_file_name='workspace_archive.tar', ignore=None):
+    tar = tarfile.open(target_file_name, 'w')
 
     for file_name in recursive_files(dir_name, ignore):
         tar.add(file_name)
@@ -74,7 +74,7 @@ def make_tar_file(dir_name='.', tar_file_name='workspace_archive.tar', ignore=No
 dir_name = '.'
 target_file_name = 'workspace_archive.tar'
 # List of files/directories to ignore
-ignore = {'.ipynb_checkpoints', '__pycache__', tar_file_name}
+ignore = {'.ipynb_checkpoints', '__pycache__', target_file_name}
 
 make_tar_file(dir_name, target_file_name, ignore)
 ```
